@@ -3,6 +3,11 @@ const puppeteer = require('puppeteer');
 const cors = require('cors');
 
 const app = express();
+
+app.get('/', (req, res) => {
+  res.send("✅ pti-check API მუშაობს!");
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
