@@ -3,14 +3,13 @@ const puppeteer = require('puppeteer');
 const cors = require('cors');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send("✅ pti-check API მუშაობს!");
 });
-
-const PORT = process.env.PORT || 3000;
-
-app.use(cors());
 
 app.get('/check-vin', async (req, res) => {
   const plate = req.query.plate;
